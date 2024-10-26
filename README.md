@@ -1,9 +1,6 @@
 <h1 align="center">Hi 👋, I'm Alan Lanceloth</h1>
 <h3 align="center">A Data Analyst and Scientist (and sometimes Engineer)</h3>
 
-<a href="https://linktr.ee/nimlas_enterprises">All my links</a>
-
-
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=alanceloth&label=Profile%20views&color=0e75b6&style=flat" alt="alanceloth" /> </p>
 
 <a href="https://github.com/ryo-ma/github-profile-trophy"><h2>🏆 Github Profile Trophy</h2></a>
@@ -13,9 +10,16 @@
 - 📫 How to reach me <a href="mailto:alan.lanceloth@gmail.com">alan.lanceloth@gmail.com</a>
 
 <h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/alanlanceloth" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="alanlanceloth" height="30" width="40" /></a>
-</p>
+<div>
+    <a href="https://www.linkedin.com/in/alanlanceloth/">
+        <img src="https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin&style=flat" alt="LinkedIn">
+    </a>
+    <a href="https://linktr.ee/nimlas_enterprises">
+        <img src="https://img.shields.io/badge/Linktree-Profile-brightgreen?logo=linktree&style=flat" alt="Linktree">
+    </a>
+</div>
+
+
 
 <h2>🛠️ Tech Stack 💻</h2>
 <h3 align="left">Languages and Tools:</h3>
