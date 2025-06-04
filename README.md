@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Alan Lanceloth</h1>
-<h3 align="center">A Data Analyst and Scientist (and sometimes Engineer)</h3>
+<h3 align="center">A Analytics Engineer, Data Engineer, AI Engineer.</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=alanceloth&label=Profile%20views&color=0e75b6&style=flat" alt="alanceloth" /> </p>
 
