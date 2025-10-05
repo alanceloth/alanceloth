@@ -1,29 +1,82 @@
-<h1 align="center">Hi 👋, I'm Alan Lanceloth</h1>
-<h3 align="center">A Analytics Engineer, Data Engineer, AI Engineer.</h3>
+# Cruise Price Monitor
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=alanceloth&label=Profile%20views&color=0e75b6&style=flat" alt="alanceloth" /> </p>
+O projeto **Cruise Price Monitor** tem como objetivo acompanhar e comparar preços de cruzeiros em múltiplas fontes, oferecendo alertas e ferramentas de análise para identificar as melhores ofertas disponíveis.
 
-<a href="https://github.com/ryo-ma/github-profile-trophy"><h2>🏆 Github Profile Trophy</h2></a>
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=alanceloth&theme=onedark&no-frame=true" alt="alanceloth" /></a> </p>
+## Visão Geral
 
-<h2>📧 Contact</h2>
-- 📫 How to reach me <a href="mailto:alan.lanceloth@gmail.com">alan.lanceloth@gmail.com</a>
+A aplicação é composta pelos seguintes módulos:
 
-<h3 align="left">Connect with me:</h3>
-<div>
-    <a href="https://www.linkedin.com/in/alanlanceloth/">
-        <img src="https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin&style=flat" alt="LinkedIn">
-    </a>
-    <a href="https://linktr.ee/nimlas_enterprises">
-        <img src="https://img.shields.io/badge/Linktree-Profile-brightgreen?logo=linktree&style=flat" alt="Linktree">
-    </a>
-</div>
+- **Scrapers e integrações**: coleta de dados de APIs públicas ou por meio de scraping.
+- **Banco de dados PostgreSQL** com versionamento via Alembic.
+- **API interna FastAPI** para consulta de cruzeiros, rankings e gerenciamento de alertas.
+- **Scheduler diário** que atualiza preços e registra histórico.
+- **Sistema de alertas** com suporte a múltiplos canais (e-mail, Telegram, Slack).
+- **Monitoramento** com logs estruturados e métricas para observabilidade.
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=alanceloth&show_icons=true&locale=en&layout=compact" alt="alanceloth" /></p>
+## Requisitos
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=alanceloth&show_icons=true&locale=en" alt="alanceloth" /></p>
+- Python 3.12+
+- PostgreSQL 15+
+- [Poetry](https://python-poetry.org/) ou pipenv para gerenciamento de dependências
+- Docker / Docker Compose (opcional para desenvolvimento)
 
-<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=alanceloth&" alt="alanceloth" /></p>
+## Configuração do Ambiente
 
+1. Clone o repositório e acesse o diretório do projeto:
 
-[![alanceloth's GitHub | Stats](https://stats.quira.sh/alanceloth/github?theme=dark)](https://quira.sh?utm_source=widgets&utm_campaign=alanceloth)
+   ```bash
+   git clone <repo-url>
+   cd cruise-price-monitor
+   ```
+
+2. Copie o arquivo `.env.example` para `.env` e ajuste as variáveis necessárias.
+
+   ```bash
+   cp .env.example .env
+   ```
+
+3. Instale as dependências com Poetry:
+
+   ```bash
+   poetry install
+   ```
+
+   Ou com pipenv:
+
+   ```bash
+   pipenv install --dev
+   ```
+
+4. Execute as migrações do banco de dados:
+
+   ```bash
+   poetry run alembic upgrade head
+   ```
+
+5. Inicie a aplicação FastAPI em modo de desenvolvimento:
+
+   ```bash
+   poetry run uvicorn src.api.main:app --reload
+   ```
+
+## Testes
+
+Execute os testes com:
+
+```bash
+poetry run pytest
+```
+
+## Docker
+
+Para iniciar os serviços com Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+## Roadmap Futuro
+
+- Dashboard web para visualização dos itinerários e comparativos.
+- Integração com APIs de companhias aéreas.
+- Módulo de recomendação de roteiros personalizados.

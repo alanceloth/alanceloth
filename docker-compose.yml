@@ -1,0 +1,45 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: cruise_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build:
+      context: .
+      dockerfile: docker/app.Dockerfile
+    command: uvicorn src.api.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - ./:/app
+    environment:
+      - DATABASE_URL=postgresql+psycopg2://postgres:postgres@db:5432/cruise_db
+      - APP_ENV=development
+      - LOG_LEVEL=INFO
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+
+  scheduler:
+    build:
+      context: .
+      dockerfile: docker/app.Dockerfile
+    command: python -m src.core.scheduler
+    environment:
+      - DATABASE_URL=postgresql+psycopg2://postgres:postgres@db:5432/cruise_db
+      - APP_ENV=development
+      - LOG_LEVEL=INFO
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
